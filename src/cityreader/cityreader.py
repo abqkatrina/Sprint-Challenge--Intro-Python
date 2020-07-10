@@ -9,7 +9,26 @@
 # to read this file so that each record is imported into a City instance. Then
 # return the list with all the City instances from the function.
 # Google "python 3 csv" for references and use your Google-fu for other examples.
-#
+import csv
+
+file = "src\cityreader\cities.csv"
+fields = []
+rows = []
+
+with open(file, 'r') as cityfile:
+  filereader = csv.reader(cityfile)
+  
+  fields = next(filereader)
+  
+  for row in filereader:
+    rows.append(row)
+    for col in row:
+      print('%10s'%col),
+    print('\n')
+  print(fields)
+  print(filereader.line_num)
+ 
+
 # Store the instances in the "cities" list, below.
 #
 # Note that the first line of the CSV is header that describes the fields--this
@@ -34,7 +53,7 @@ for c in cities:
 # Allow the user to input two points, each specified by latitude and longitude.
 # These points form the corners of a lat/lon square. Pass these latitude and 
 # longitude values as parameters to the `cityreader_stretch` function, along
-# with the `cities` list that holds all the City instances from the `cityreader`
+# with the `cities` list that holds all the City instances from the `filereader`
 # function. This function should output all the cities that fall within the 
 # coordinate square.
 #
