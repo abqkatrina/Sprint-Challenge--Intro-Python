@@ -11,21 +11,22 @@
 
 import csv
 
-file = r"src\cityreader\cities.csv"
+file = r"cities.csv"
 
-# with open(file, 'r') as cityfile:
-#   filereader = csv.reader(cityfile)
-  # fields = []
-  # fields = next(filereader)
-  # rows = []
-  # for row in filereader:
-  #   rows.append(row)
-  # cities = []
-  # for col in rows:
-  #   cities.append('City: (%s, %f, %f)' % (col[0], float(col[3]), float(col[4])))
+with open(file, 'r') as cityfile:
+  filereader = csv.reader(cityfile)
+  fields = []
+  fields = next(filereader)
+  rows = []
+  for row in filereader:
+    rows.append(row)
+  cities = []
+  for col in rows:
+    cities.append('City: (%s, %f, %f)' % (col[0], float(col[3]), float(col[4])))
 
   # print(fields)
   # print(filereader.line_num)
+  print(cities)
  
 
 # Store the instances in the "cities" list, below.
@@ -33,21 +34,19 @@ file = r"src\cityreader\cities.csv"
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
 
-cities = []
+# with open(file, 'r') as cityfile:
+#   filereader = csv.reader(cityfile)
 
-def cityreader(cities=[]):
+# cities = []
 
-  with open(file, 'r') as cityfile:
-    filereader = csv.reader(cityfile)
+# def cityreader(cities=[]):
 
-    print(filereader.line_num)
+#   print(filereader)
 
-  for row in filereader:
-    cities.append('City: (%s, %f, %f)' % (col[0], float(col[3]), float(col[4])))
+#   for col in filereader:
+#     cities.append('City: (%s, %f, %f)' % (col[0], float(col[3]), float(col[4])))
 
-
-
-cityreader(cities)
+# cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 # for c in cities:
@@ -84,12 +83,12 @@ cityreader(cities)
 
 # TODO Get latitude and longitude values from the user
 
-def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+# def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
-  within = []
+  # within = []
 
   # TODO Ensure that the lat and lon valuse are all floats
   # Go through each city and check to see if it falls within 
   # the specified coordinates.
 
-  return within
+  # return within
