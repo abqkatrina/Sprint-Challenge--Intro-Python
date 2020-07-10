@@ -22,8 +22,8 @@ with open(file, 'r') as cityfile:
   
   for row in filereader:
     rows.append(row)
-    for col in row:
-      print('%10s'%col),
+    for col in rows[:4]:
+      print('%10s'%col[0]),
     print('\n')
   print(fields)
   print(filereader.line_num)
